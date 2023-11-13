@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1133717791}
-  scoreIncreaseAmount: 50
+  scoreIncreaseAmount: 1
 --- !u!114 &1133717791
 MonoBehaviour:
   m_ObjectHideFlags: 0
