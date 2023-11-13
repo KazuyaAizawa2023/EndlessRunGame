@@ -1,26 +1,27 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5.0f; // ˆÚ“®‘¬“x‚ğ’²®‚Å‚«‚é‚æ‚¤‚É‚·‚é
+    public float moveSpeed = 5.0f; // ç§»å‹•é€Ÿåº¦ã‚’èª¿æ•´ã§ãã‚‹ã‚ˆã†ã«ã™ã‚‹
 
     void Update()
     {
-        // ¶–îˆó‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+        // å·¦çŸ¢å°ãŒæŠ¼ã•ã‚ŒãŸã¨ã
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime); // ¶‚ÉˆÚ“®
+            transform.Translate(Vector3.left * moveSpeed * Time.deltaTime); // å·¦ã«ç§»å‹•
         }
 
-        // ‰E–îˆó‚ª‰Ÿ‚³‚ê‚½‚Æ‚«
+        // å³çŸ¢å°ãŒæŠ¼ã•ã‚ŒãŸã¨ã
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime); // ‰E‚ÉˆÚ“®
+            transform.Translate(Vector3.right * moveSpeed * Time.deltaTime); // å³ã«ç§»å‹•
         }
 
-        // ‰æ–ÊŠO‚Éo‚È‚¢‚æ‚¤‚É§ŒÀ‚ğ‚©‚¯‚é
+        // ç”»é¢å¤–ã«å‡ºãªã„ã‚ˆã†ã«åˆ¶é™ã‚’ã‹ã‘ã‚‹
         Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
         viewPos.x = Mathf.Clamp(viewPos.x, 0.0f, 1.0f);
         transform.position = Camera.main.ViewportToWorldPoint(viewPos);
+
     }
 }
