@@ -1,41 +1,54 @@
-using System.Collections;
+ï»¿using System.Collections;
 using UnityEngine;
 
 public class RockSpawner : MonoBehaviour
 {
-    public GameObject rockPrefab;    // Šâ‚ÌƒvƒŒƒnƒu
-    public float spawnInterval = 3.0f; // Šâ‚Ì¶¬ŠÔŠui•bj
-    public float initialDelay = 2.0f;  // ‰Šú’x‰„ŠÔ
+    public GameObject rockPrefab;    // å²©ã®ãƒ—ãƒ¬ãƒãƒ–
+    public float spawnInterval = 3.0f; // å²©ã®ç”Ÿæˆé–“éš”ï¼ˆç§’ï¼‰
+    public float initialDelay = 2.0f;  // åˆæœŸé…å»¶æ™‚é–“
 
+    
     private Camera mainCamera;
 
     private void Start()
     {
-        mainCamera = Camera.main; // ƒJƒƒ‰‚ğæ“¾
+        Camera foundCamera = Camera.main;
+        if (foundCamera == null)
+        {
+            Debug.LogError("ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚");
+        }
+        else
+        {
+            Debug.Log("ãƒ¡ã‚¤ãƒ³ã‚«ãƒ¡ãƒ©ãŒè¦‹ã¤ã‹ã‚Šã¾ã—ãŸ: " + foundCamera.name);
+        }
 
-        // Coroutine‚ğŠJn
+        mainCamera = foundCamera; // ã‚«ãƒ¡ãƒ©ã‚’å–å¾—
+        // Coroutineã‚’é–‹å§‹
         StartCoroutine(SpawnRocksCoroutine());
     }
 
     private IEnumerator SpawnRocksCoroutine()
     {
-        // ‰Šú’x‰„
+        // åˆæœŸé…å»¶
         yield return new WaitForSeconds(initialDelay);
 
         while (true)
         {
-            // ƒ‰ƒ“ƒ_ƒ€‚ÈˆÊ’u‚ğ¶¬i‰æ–Ê‚Ìã”¼•ª‚Ìƒ‰ƒ“ƒ_ƒ€‚ÈˆÊ’u‚ğæ“¾j
+            // ãƒ©ãƒ³ãƒ€ãƒ ãªä½ç½®ã‚’ç”Ÿæˆï¼ˆç”»é¢ã®ä¸ŠåŠåˆ†ã®ãƒ©ãƒ³ãƒ€ãƒ ãªä½ç½®ã‚’å–å¾—ï¼‰
             Vector3 randomViewportPoint = new Vector3(Random.value, Random.Range(0.5f, 1.0f), 0);
             Vector3 randomWorldPoint = mainCamera.ViewportToWorldPoint(randomViewportPoint);
 
-            // Šâ‚ğ¶¬‚µAè‘O‚É”z’u
+            // å²©ã‚’ç”Ÿæˆã—ã€æ‰‹å‰ã«é…ç½®
             GameObject rock = Instantiate(rockPrefab, randomWorldPoint, Quaternion.identity);
-            rock.transform.position = new Vector3(rock.transform.position.x, rock.transform.position.y, 0); // ZÀ•W‚ğè‘O‚É”z’u
+            rock.transform.position = new Vector3(rock.transform.position.x, rock.transform.position.y, 0); // Zåº§æ¨™ã‚’æ‰‹å‰ã«é…ç½®
 
-            // ¶¬‚³‚ê‚½Šâ‚É RockMovement ƒXƒNƒŠƒvƒg‚ğƒAƒ^ƒbƒ`
+            // ç”Ÿæˆã•ã‚ŒãŸå²©ã« RockMovement ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’ã‚¢ã‚¿ãƒƒãƒ
             rock.AddComponent<RockMovement>();
 
-            // w’è‚ÌŠÔŠu‚¾‚¯‘Ò‹@
+            // ãƒ‡ãƒãƒƒã‚°ãƒ­ã‚°ã§ç”Ÿæˆã•ã‚ŒãŸå²©ã®ä½ç½®æƒ…å ±ã‚’è¡¨ç¤º
+            Debug.Log("å²©ãŒç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚ä½ç½®: " + randomWorldPoint);
+
+            // æŒ‡å®šã®é–“éš”ã ã‘å¾…æ©Ÿ
             yield return new WaitForSeconds(spawnInterval);
         }
     }
