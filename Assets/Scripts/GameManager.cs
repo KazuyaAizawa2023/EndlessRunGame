@@ -50,8 +50,7 @@ public class GameManager : MonoBehaviour
     }
 
     void LevelUp()
-    //これにより、LevelUp メソッドが呼ばれると、プレイヤーの速度が10%増加し、
-    //障害物の生成間隔が10%減少します。
+
     {
         // レベルアップ時の処理
         currentLevel++;
