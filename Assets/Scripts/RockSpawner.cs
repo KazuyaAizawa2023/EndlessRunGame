@@ -35,10 +35,11 @@ public class RockSpawner : MonoBehaviour
         while (true)
         {
             // ランダムな位置を生成（画面の上半分のランダムな位置を取得）
-            float randomX = Random.Range(0.1f, 0.9f); // 左側の範囲を指定
-            Vector3 randomViewportPoint = new Vector3(randomX, Random.value, 0);
+            Vector3 randomViewportPoint = new Vector3(Random.Range(0.0f, 1.0f), Random.Range(0.5f, 1.0f), 0);
             Vector3 randomWorldPoint = mainCamera.ViewportToWorldPoint(randomViewportPoint);
 
+            // X座標を0.1だけ狭くする
+            randomWorldPoint.x = Mathf.Clamp(randomWorldPoint.x, mainCamera.ViewportToWorldPoint(new Vector3(0.3f, 0, 0)).x, mainCamera.ViewportToWorldPoint(new Vector3(0.85f, 0, 0)).x);
 
             // 岩を生成し、手前に配置
             GameObject rock = Instantiate(rockPrefab, randomWorldPoint, Quaternion.identity);

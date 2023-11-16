@@ -19,50 +19,50 @@ public class RockMovement : MonoBehaviour
 
 
     // 衝突した瞬間に呼び出されるメソッド
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         // 衝突した相手がプレイヤーだった場合
         if (collision.gameObject.CompareTag("Player"))
         {
-            // 速度をゼロにする
-            rb2D.velocity = Vector3.zero;
+            // 岩を削除する
+            Destroy(gameObject);
         }
     }
-    //private void StartFalling()
-    //{
-    //    // 初期遅延後に岩の初速度を設定し、下に向かって垂直に落下するようにする
-    //    rb.useGravity = true;
-    //    rb.velocity = new Vector3(0, -fallSpeed, 0);
-    //}
-
-    //private void Update()
-    //{
-    //    // 画面外に出たらオブジェクトを破棄
-    //    if (IsOutOfScreen())
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
-
-    //private bool IsOutOfScreen()
-    //{
-    //    // 岩の位置をスクリーン座標に変換
-    //    Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-
-    //    // 画面外に出ているかどうかを判定
-    //    return (screenPos.x < 0 || screenPos.x > Screen.width || screenPos.y < 0 || screenPos.y > Screen.height);
-    //}
-
-    // リストから要素を削除してオブジェクトを破棄するメソッド
-    //private void RemoveFromListAndDestroy()
-    //{
-    //    // rocks リストから自分（このスクリプトがアタッチされているオブジェクト）を探して削除
-    //    if (rocks.Contains(gameObject))
-    //    {
-    //        rocks.Remove(gameObject);
-    //    }
-
-    //    // オブジェクトを破棄
-    //    Destroy(gameObject);
-    //}
 }
+            //private void StartFalling()
+            //{
+            //    // 初期遅延後に岩の初速度を設定し、下に向かって垂直に落下するようにする
+            //    rb.useGravity = true;
+            //    rb.velocity = new Vector3(0, -fallSpeed, 0);
+            //}
+
+            //private void Update()
+            //{
+            //    // 画面外に出たらオブジェクトを破棄
+            //    if (IsOutOfScreen())
+            //    {
+            //        Destroy(gameObject);
+            //    }
+            //}
+
+            //private bool IsOutOfScreen()
+            //{
+            //    // 岩の位置をスクリーン座標に変換
+            //    Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
+            //    // 画面外に出ているかどうかを判定
+            //    return (screenPos.x < 0 || screenPos.x > Screen.width || screenPos.y < 0 || screenPos.y > Screen.height);
+            //}
+
+            // リストから要素を削除してオブジェクトを破棄するメソッド
+            //private void RemoveFromListAndDestroy()
+            //{
+            //    // rocks リストから自分（このスクリプトがアタッチされているオブジェクト）を探して削除
+            //    if (rocks.Contains(gameObject))
+            //    {
+            //        rocks.Remove(gameObject);
+            //    }
+
+            //    // オブジェクトを破棄
+            //    Destroy(gameObject);
+            //}
