@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rockPrefab: {fileID: 4538405669695427390, guid: a49e52692989f20478c31e994597e237, type: 3}
-  spawnInterval: 3
+  spawnInterval: 1.5
   initialDelay: 2
 --- !u!114 &772944224
 MonoBehaviour:
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9564506c215532748b8e8d3b4ec93950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 5
+  fallSpeed: 10
   initialDelay: 2
 --- !u!1 &1065841961
 GameObject:

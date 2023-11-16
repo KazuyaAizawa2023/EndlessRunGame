@@ -4,7 +4,7 @@ using UnityEngine;
 public class RockSpawner : MonoBehaviour
 {
     public GameObject rockPrefab;    // 岩のプレハブ
-    public float spawnInterval = 3.0f; // 岩の生成間隔（秒）
+    public float spawnInterval = 1.2f; // 岩の生成間隔（秒）
     public float initialDelay = 2.0f;  // 初期遅延時間
 
     
@@ -35,8 +35,10 @@ public class RockSpawner : MonoBehaviour
         while (true)
         {
             // ランダムな位置を生成（画面の上半分のランダムな位置を取得）
-            Vector3 randomViewportPoint = new Vector3(Random.value, Random.Range(0.5f, 1.0f), 0);
+            float randomX = Random.Range(0.1f, 0.9f); // 左側の範囲を指定
+            Vector3 randomViewportPoint = new Vector3(randomX, Random.value, 0);
             Vector3 randomWorldPoint = mainCamera.ViewportToWorldPoint(randomViewportPoint);
+
 
             // 岩を生成し、手前に配置
             GameObject rock = Instantiate(rockPrefab, randomWorldPoint, Quaternion.identity);
