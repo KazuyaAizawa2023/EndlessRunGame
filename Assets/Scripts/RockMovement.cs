@@ -29,7 +29,7 @@ public class RockMovement : MonoBehaviour
         }
     }
 }
-            //private void StartFalling()
+  //private void StartFalling()
             //{
             //    // 初期遅延後に岩の初速度を設定し、下に向かって垂直に落下するようにする
             //    rb.useGravity = true;
