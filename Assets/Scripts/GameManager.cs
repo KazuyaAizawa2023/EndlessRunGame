@@ -35,12 +35,15 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
+            // レベルに応じてスコアの上昇量を計算
+            float currentScoreIncrease = scoreIncreaseAmount * currentLevel;
+
             // 一定の間隔ごとにスコアが増える
-            score += scoreIncreaseAmount;
+            score += currentScoreIncrease;
             UpdateScoreText();   // スコア表示を更新
 
-            // スコアが50の倍数のときにレベルアップ
-            if (Mathf.FloorToInt(score) % 50 == 0)
+            // スコアが25の倍数のときにレベルアップ
+            if (Mathf.FloorToInt(score) % 25 == 0)
             {
                 LevelUp();
             }

@@ -3,6 +3,9 @@
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5.0f; // 移動速度を調整できるようにする
+    //public float invincibilityDuration = 10.0f; // 無敵時間（秒）
+    //private float invincibilityTimer = 0.0f;   // 経過時間を格納するタイマー変数(初期値0秒)
+    //private bool isInvincible = false;         // 無敵状態かどうかのフラグ
 
     void Update()
     {
