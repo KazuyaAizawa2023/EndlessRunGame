@@ -43,12 +43,12 @@ public class GameManager : MonoBehaviour
             UpdateScoreText();   // スコア表示を更新
 
             // スコアが25の倍数のときにレベルアップ
-            if (Mathf.FloorToInt(score) % 25 == 0)
+            if (Mathf.FloorToInt(score) >= 25 && Mathf.FloorToInt(score) % 25 == 0)
             {
                 LevelUp();
             }
 
-            yield return new WaitForSeconds(1.0f); // 1秒ごとにスコアが増える例
+            yield return new WaitForSeconds(1.0f); // 1秒ごとにスコアが増える
         }
     }
 

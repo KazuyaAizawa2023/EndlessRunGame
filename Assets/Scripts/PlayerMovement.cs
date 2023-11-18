@@ -23,8 +23,14 @@ public class PlayerMovement : MonoBehaviour
 
         // 画面外に出ないように制限をかける
         Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
-        viewPos.x = Mathf.Clamp(viewPos.x, 0.0f, 1.0f);
+
+        // プレイヤーが画面外に出ないように、画面の端に対して一定のマージンを設ける
+        float margin = 0.05f;  // マージンの割合を調整可能
+
+        viewPos.x = Mathf.Clamp(viewPos.x, margin, 1.0f - margin);
+
         transform.position = Camera.main.ViewportToWorldPoint(viewPos);
+
 
     }
 }
