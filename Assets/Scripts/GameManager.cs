@@ -42,8 +42,8 @@ public class GameManager : MonoBehaviour
             score += currentScoreIncrease;
             UpdateScoreText();   // スコア表示を更新
 
-            // スコアが25の倍数のときにレベルアップ
-            if (Mathf.FloorToInt(score) >= 25 && Mathf.FloorToInt(score) % 25 == 0)
+            // スコアが25の倍数 × (現在のレベル + 1)以上の場合にレベルアップ
+            if (Mathf.FloorToInt(score) >= 25 * currentLevel)
             {
                 LevelUp();
             }
