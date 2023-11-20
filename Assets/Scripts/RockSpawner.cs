@@ -6,8 +6,9 @@ public class RockSpawner : MonoBehaviour
     public GameObject rockPrefab;    // 岩のプレハブ
     public float spawnInterval = 1.2f; // 岩の生成間隔（秒）
     public float initialDelay = 2.0f;  // 初期遅延時間
+    private bool isCoroutineRunning = false;// コルーチンが実行中かどうかを示すフラグ
 
-    
+
     private Camera mainCamera;
 
     private void Start()
@@ -23,14 +24,25 @@ public class RockSpawner : MonoBehaviour
         }
 
         mainCamera = foundCamera; // カメラを取得
-        // Coroutineを開始
-        StartCoroutine(SpawnRocksCoroutine());
+        // Coroutineが既に実行中でなければ開始
+        if (!isCoroutineRunning)
+        {
+            StartCoroutine(SpawnRocksCoroutine());
+        }
     }
 
     private IEnumerator SpawnRocksCoroutine()
     {
-        // 初期遅延
-        yield return new WaitForSeconds(initialDelay);
+        Debug.Log("SpawnRocksCoroutine 開始");
+
+        // 既にコルーチンが実行中である場合は再開させない
+        if (isCoroutineRunning)
+        {
+            yield break;
+        }
+
+        isCoroutineRunning = true;
+
 
         while (true)
         {
@@ -54,6 +66,8 @@ public class RockSpawner : MonoBehaviour
             // 指定の間隔だけ待機
             yield return new WaitForSeconds(spawnInterval);
         }
+        // コルーチンが終了したことをマーク
+        isCoroutineRunning = false;
     }
 }
 
