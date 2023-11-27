@@ -11,6 +11,10 @@ public class RockSpawner : MonoBehaviour
 
     private Camera mainCamera;
 
+    //Start メソッド内で isCoroutineRunning の確認を行い、
+    //Coroutine が既に開始されている場合は新たに開始しないようにする
+    //これにより、複数の Coroutine が同時に実行されることを防ぐ
+
     private void Start()
     {
         Camera foundCamera = Camera.main;
