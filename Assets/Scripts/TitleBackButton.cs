@@ -2,9 +2,8 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour
+public class TitleBackButton : MonoBehaviour
 {
-    
     public void Start()
     {
         var button = GetComponent<Button>();
@@ -12,8 +11,8 @@ public class StartButton : MonoBehaviour
         // ボタンを押したときのリスナー設定
         button.onClick.AddListener(() =>
         {
-            // ゲームシーンをロード
-            SceneManager.LoadScene("GameScene");
+            // 説明シーンをロード
+            SceneManager.LoadScene("TitleScene");
         });
 
     }

@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 574692982}
   - component: {fileID: 574692985}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,8 +868,9 @@ GameObject:
   - component: {fileID: 1996320540}
   - component: {fileID: 1996320539}
   - component: {fileID: 1996320538}
+  - component: {fileID: 1996320541}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: HowToPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -977,6 +978,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996320536}
   m_CullTransparentMesh: 1
+--- !u!114 &1996320541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996320536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9896b7eef20b142aa99f4807136db2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
