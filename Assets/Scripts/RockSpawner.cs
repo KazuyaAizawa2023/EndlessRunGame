@@ -62,7 +62,7 @@ public class RockSpawner : MonoBehaviour
             rock.transform.position = new Vector3(rock.transform.position.x, rock.transform.position.y, 0); // Z座標を手前に配置
 
             // 生成された岩に RockMovement スクリプトをアタッチ
-            rock.AddComponent<RockMovement>();
+            //rock.AddComponent<RockMovement>();
 
             // デバッグログで生成された岩の位置情報を表示
             Debug.Log("岩が生成されました。位置: " + randomWorldPoint);
