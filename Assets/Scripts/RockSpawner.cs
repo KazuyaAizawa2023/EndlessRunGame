@@ -5,7 +5,7 @@ public class RockSpawner : MonoBehaviour
 {
     public GameObject rockPrefab;    // 岩のプレハブ
     public float spawnInterval = 1.2f; // 岩の生成間隔（秒）
-    public float initialDelay = 2.0f;  // 初期遅延時間
+    public float initialDelay = 5.0f;  // 初期遅延時間
     private bool isCoroutineRunning = false;// コルーチンが実行中かどうかを示すフラグ
 
 
@@ -72,6 +72,19 @@ public class RockSpawner : MonoBehaviour
         }
         // コルーチンが終了したことをマーク
         isCoroutineRunning = false;
+    }
+
+    private void Update()
+    {
+        GameObject[] rocks = GameObject.FindGameObjectsWithTag("Rock"); // "Rock" タグのついたすべての岩を取得
+
+        foreach (var rock in rocks)
+        {
+            if (rock.transform.position.y < mainCamera.ViewportToWorldPoint(Vector3.zero).y)
+            {
+                Destroy(rock); // 画面外に出たら削除
+            }
+        }
     }
 }
 
