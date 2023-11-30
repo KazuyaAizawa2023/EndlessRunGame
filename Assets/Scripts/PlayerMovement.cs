@@ -33,4 +33,18 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Rock"))
+        {
+            HandleObstacleCollision();
+        }
+    }
+
+    void HandleObstacleCollision()
+    {
+        Debug.Log("Player collided with obstacle!");
+        // ここでプレイヤーとの衝突に対する追加の処理を行う（例: ダメージを受けるなど）
+    }
 }
