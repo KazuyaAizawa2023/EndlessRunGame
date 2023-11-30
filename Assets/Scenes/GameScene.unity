@@ -1036,10 +1036,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: rockPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 4538405669695427390, guid: a49e52692989f20478c31e994597e237, type: 3}
-      propertyPath: m_TagString
-      value: Rock
-      objectReference: {fileID: 0}
     - target: {fileID: 5237987450071125325, guid: a49e52692989f20478c31e994597e237, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.31
@@ -1080,8 +1076,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6533414386910547159, guid: a49e52692989f20478c31e994597e237, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
