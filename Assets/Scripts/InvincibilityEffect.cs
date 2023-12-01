@@ -5,16 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class InvincibilityEffect : MonoBehaviour
 {
-    private Renderer renderer;
+    private SpriteRenderer renderer;
     private CircleCollider2D circleCollider2D;
 
-    private const float BlinkInterval = 0.15f;
-    private const float PostBlinkDelay = 0.3f;
+    private const float BlinkInterval = 0.5f;
+    private const float PostBlinkDelay = 1.0f;
 
     void Start()
     {
         circleCollider2D = GetComponent<CircleCollider2D>();
-        renderer = GetComponent<Renderer>();
+        renderer = GetComponent<SpriteRenderer>();
         // Rigidbody2Dを削除するか、無効にする
         Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
         if (rigidbody2D != null)

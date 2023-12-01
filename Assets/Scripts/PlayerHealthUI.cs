@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealthUI : MonoBehaviour
@@ -57,6 +58,7 @@ public class PlayerHealthUI : MonoBehaviour
     // ゲームオーバー時の処理を行うメソッド
     void ShowGameOverScreen()
     {
-        // ゲームオーバー画面の表示などの処理を行う
+        // エンドスクリーンのシーンに切り替える
+        SceneManager.LoadScene("EndScene");
     }
 }
