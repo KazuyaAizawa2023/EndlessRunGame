@@ -53,6 +53,15 @@ public class PlayerHealthUI : MonoBehaviour
         Debug.Log("Player collided with Rock");
         // ここでプレイヤーとの衝突に対する追加の処理を行う（例: ダメージを受けるなど）
         DecreaseLife();
+        // プレイヤーのGameObjectからInvincibilityEffectスクリプトを取得
+        InvincibilityEffect invincibilityEffect = GetComponent<InvincibilityEffect>();
+
+        // もしInvincibilityEffectが取得できた場合
+        if (invincibilityEffect != null)
+        {
+            // 取得したInvincibilityEffectのActivateInvincibilityメソッドを呼び出し、引数に9を渡す
+            invincibilityEffect.ActivateInvincibility(9);
+        }
     }
 
     // ゲームオーバー時の処理を行うメソッド
