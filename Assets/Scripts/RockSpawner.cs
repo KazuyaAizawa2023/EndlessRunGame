@@ -47,6 +47,8 @@ public class RockSpawner : MonoBehaviour
 
         isCoroutineRunning = true;
 
+        yield return new WaitForSeconds(1.2f);
+
 
         while (true)
         {
