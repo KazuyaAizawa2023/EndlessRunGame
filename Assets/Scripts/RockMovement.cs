@@ -2,7 +2,7 @@
 
 public class RockMovement : MonoBehaviour
 {
-    public float fallSpeed = 10.0f;        // 岩の落下速度
+    public float fallSpeed = 4.5f;        // 岩の落下速度
     public float initialDelay = 2.0f;     // 初期遅延時間
 
     private Rigidbody2D rb2D;

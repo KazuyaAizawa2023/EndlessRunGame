@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerHealthUI : MonoBehaviour
 {
     public Image[] lifeIcons;
-    private int maxLife = 3;
+    private int maxLife = 5;
     private int currentLife;
     private GameManager gameManager;  // GameManagerの参照を保持
 

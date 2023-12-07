@@ -4,7 +4,7 @@ using UnityEngine;
 public class RockSpawner : MonoBehaviour
 {
     public GameObject rockPrefab;    // 岩のプレハブ
-    public float spawnInterval = 1.2f; // 岩の生成間隔（秒）
+    public float spawnInterval = 2.4f; // 岩の生成間隔（秒）
     public float initialDelay = 5.0f;  // 初期遅延時間
     private bool isCoroutineRunning = false;// コルーチンが実行中かどうかを示すフラグ
 
@@ -47,7 +47,7 @@ public class RockSpawner : MonoBehaviour
 
         isCoroutineRunning = true;
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2.4f);
 
 
         while (true)
