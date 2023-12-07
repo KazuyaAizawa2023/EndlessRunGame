@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -66,5 +67,9 @@ public class GameManager : MonoBehaviour
 
         // ここで必要なレベルアップ時の処理を追加
     }
-    
+
+    public float GetScore()
+    {
+        return score;
+    }
 }
