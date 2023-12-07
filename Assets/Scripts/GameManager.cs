@@ -62,8 +62,8 @@ public class GameManager : MonoBehaviour
         // プレイヤーの速度を15%増加
         playerMovement.moveSpeed *= 1.15f;
 
-        // 障害物の生成間隔を30%減少
-        rockSpawner.spawnInterval *= 0.7f;
+        // 障害物の生成間隔を13%減少
+        rockSpawner.spawnInterval *= 0.87f;
 
         // ここで必要なレベルアップ時の処理を追加
     }
