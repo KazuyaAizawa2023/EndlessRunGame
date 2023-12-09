@@ -1,0 +1,19 @@
+﻿using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine;
+
+public class EndSceneBack : MonoBehaviour
+{
+    public void Start()
+    {
+        var button = GetComponent<Button>();
+
+        // ボタンを押したときのリスナー設定
+        button.onClick.AddListener(() =>
+        {
+            // 説明シーンをロード
+            SceneManager.LoadScene("EndScene");
+        });
+
+    }
+}
