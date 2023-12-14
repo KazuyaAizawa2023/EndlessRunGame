@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PopupManager : MonoBehaviour
@@ -36,7 +37,7 @@ public class PopupManager : MonoBehaviour
 
     public void NoButtonClicked()
     {
-        // ポップアップを非表示にする処理を追加
-        popupPanel.SetActive(false);
+        // ポップアップを非表示にする代わりにEndSceneに移動
+        SceneManager.LoadScene("EndScene");
     }
 }
